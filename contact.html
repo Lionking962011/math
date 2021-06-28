@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+.wrapper{
+	position: absolute;
+	margin-top: 10%;
+	left: 40%;
+
+	max-width: 350px;
+	width: 100%;
+	background: #fff;
+	padding: 25px;
+	border-radius: 5px;
+	box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+  }
+  
+  .wrapper h2{
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+  }
+  
+  
+  .wrapper .input_field input[type="text"],
+  .wrapper textarea,.wrapper .input_field input[type="number"],.wrapper .input_field input[type="email"]{
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 10px;
+  }
+  
+  .wrapper textarea{
+	resize: none;
+	height: 80px;
+  }
+  
+  .wrapper .btn input[type="submit"]{
+	border: 0px;
+	margin-top: 15px;
+	padding: 10px;
+	text-align: center;
+	width: 100%;
+	background: #fece0c;
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+	border-radius: 25px;
+	cursor: pointer;
+  }
+  
+  #error_message{
+	margin-bottom: 20px;
+	background: #fe8b8e;
+	padding: 0px;
+	text-align: center;
+	font-size: 14px;
+	transition: all 0.5s ease;
+  }
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Contact us</h2>
+        <div id="error_message">
+           
+        </div>
+        <form action="https://sheetdb.io/api/v1/fpm842mcbk892" id="sheetdb-form" >
+          <div class="input_field">
+              <input type="text" name="data[name]" placeholder="Name" id="name">
+          </div>
+          <br>
+          <div class="input_field">
+              <input type="text"name="data[subject]" placeholder="Subject" id="subject">
+          </div>
+          <br>
+          <div class="input_field">
+              <input type="number"name="data[phone]" placeholder="Phone" id="phone">
+          </div>
+          <br>
+          <div class="input_field">
+              <input type="email" name="data[email]" placeholder="Email" id="email">
+          </div>
+          <br>
+          <div class="input_field">
+              <textarea placeholder="Message" name="data[message]" id="message"></textarea>
+          </div>
+          <br>
+          <div class="btn">
+              <input type="submit">
+          </div>
+        </form>
+      </div>
+
+      <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            alert('We will shortly reach you hope you like my website!!!')
+          });
+        });
+      </script>
+
+      
+</body>
+</html>
