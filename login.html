@@ -5,10 +5,9 @@
     <title>Login</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form validation in HTML & CSS | CodingNepal</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=lFG3mNTL4f4qQ4h7BdMfjG3hmzZrTOMmzAlXh7Hj-tttgG_pArbrIVD6Ubd5IrFekHLnvu_1JPFzwTuZCf4vZ2SB876V_0kh8yiO8WkbQYc" charset="UTF-8"></script></head>
 <body>
   <div class="wrapper">
     <header>Login Form  for first Player</header>
@@ -23,15 +22,15 @@
       </div>
       <div class="field password">
         <div class="input-area">
-          <input type="password" placeholder="Name">
+          <input type="text" id="name1" placeholder="Name">
           <i class="icon fas fa-lock"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
-        <div class="error error-txt">Password can't be blank</div>
+        <div class="error error-txt">Name can't be blank</div>
       </div>
-      <input type="submit" value="Login">
+      <input type="submit" onclick="save()" value="Login">
     </form>
-    <div class="sign-txt">Second Player <button onclick="update()">Login Now</button> </a></div>
+    <div class="sign-txt"> <h4 id="4l">Second Player </h4><button id="button"onclick="update()">Login Now</button> </a></div>
 
     
   </div>
@@ -49,13 +48,13 @@
     </div>
     <div class="field password">
       <div class="input-area">
-        <input type="password" placeholder="Name">
+        <input type="text" id="name2"placeholder="Name">
         <i class="icon fas fa-lock"></i>
         <i class="error error-icon fas fa-exclamation-circle"></i>
       </div>
-      <div class="error error-txt">Password can't be blank</div>
+      <div class="error error-txt">Name can't be blank</div>
     </div>
-    <input type="submit" value="Login">
+    <button id="me"onclick="send()"> <a href="gamepage.html">Login</a> </button>
   </form>
 </div>
 
@@ -63,7 +62,22 @@
       function update()
       {
           document.getElementById("form1").style.display="block";
+          document.getElementById("button").style.display="none";
+          document.getElementById("4l").style.display="none";
       }
+
+    function save()
+    {
+    var name_of_player1= document.getElementById("name1").value;
+    localStorage.setItem("name1", name_of_player1 );
+    }
+
+    function send()
+    {
+    var name_of_player2= document.getElementById("name2").value;
+    localStorage.setItem("name2",name_of_player2 );
+    }
+
   </script>
 
 </body>

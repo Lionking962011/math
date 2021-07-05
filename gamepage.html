@@ -1,0 +1,72 @@
+<html>
+<head>
+    
+    <title>Main Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+
+    <style>
+        body
+        {
+            background-color: lightblue;
+        }
+        #output
+{
+background: white;
+border-radius: 10px;
+border-top: 10px solid rgb(175, 175, 255);
+padding: 10px;
+float: none;
+text-align: left;
+}
+    </style>
+
+    <body>
+
+<h4 id="player1_name"></h4> <span id="score1"></span>
+<br>
+
+<h4 id="player2_name"></h4> <span id="score2"></span>
+
+        <div class="container">
+<center>
+<h1 style="color: white;">Multiple It!!</h1>
+
+<br>
+
+
+<h2 id="question_of_the_1player">Question:</h2> <span id="try1"></span>
+<h2 id="question_of_the_2player">Answer:</h2> <span id="try2"></span>
+
+
+<div id="output"  class="col-lg-6"> </div>
+
+<br>
+<br>
+
+<label>Follow that <b style="color: white;">Don't Put the number same number.</b></label>
+<br>
+<br>
+<input type="number" id="number1" class="form-control" placeholder="9">
+
+<br>
+<br>
+<input type="number" id="number2" class="form-control" placeholder="9">
+<br>
+<br>
+<button  id = "send-btn" class="btn btn-success" style="width: 30%" onclick="send()">Send your number</button>
+
+
+
+
+
+
+</center>
+
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
